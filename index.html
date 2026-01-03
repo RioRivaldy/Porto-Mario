@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | [Mario Rivaldy]</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1D1616;
+            background-color: #FFFFFF;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-accent {
+            background-color: #D84040;
+        }
+
+        .text-accent {
+            color: #D84040;
+        }
+
+        .border-accent {
+            border-color: #D84040;
+        }
+
+        .ring-accent {
+            --tw-ring-color: #D84040;
+        }
+
+        .active-nav {
+            color: #D84040;
+            border-bottom: 2px solid #D84040;
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            /* Posisi horizontal (sesuai dengan 'left-4' pada garis) */
+            top: 0.25rem;
+            /* Posisi vertikal agar sejajar dengan teks */
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: #D84040;
+            /* Warna aksen Anda */
+            border: 3px solid #FFFFFF;
+            /* Cincin putih di sekitar titik */
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#beranda" class="text-2xl font-bold text-[#1D1616]">Mario Rivaldy</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#beranda" class="nav-link text-lg hover:text-accent transition-colors duration-300">Beranda</a>
+                <a href="#portofolio"
+                    class="nav-link text-lg hover:text-accent transition-colors duration-300">Portofolio</a>
+                <a href="#tentang" class="nav-link text-lg hover:text-accent transition-colors duration-300">Tentang</a>
+                <a href="#teknologi"
+                    class="nav-link text-lg hover:text-accent transition-colors duration-300">Teknologi</a>
+                <a href="#pengalaman"
+                    class="nav-link text-lg hover:text-accent transition-colors duration-300">Pengalaman</a>
+                <a href="#statistik"
+                    class="nav-link text-lg hover:text-accent transition-colors duration-300">Statistik</a>
+                <a href="#kontak"
+                    class="bg-accent text-white px-5 py-2 rounded-md hover:bg-opacity-90 transition-all duration-300">Hubungi
+                    Saya</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#beranda" class="block py-2 px-6 text-center hover:bg-gray-100">Beranda</a>
+            <a href="#portofolio" class="block py-2 px-6 text-center hover:bg-gray-100">Portofolio</a>
+            <a href="#tentang" class="block py-2 px-6 text-center hover:bg-gray-100">Tentang</a>
+            <a href="#teknologi" class="block py-2 px-6 text-center hover:bg-gray-100">Teknologi</a>
+            <a href="#pengalaman" class="block py-2 px-6 text-center hover:bg-gray-100">Pengalaman</a>
+            <a href="#statistik" class="block py-2 px-6 text-center hover:bg-gray-100">Statistik</a>
+            <a href="#kontak" class="block py-4 px-6 text-center bg-accent text-white">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- <main>
+        <section id="beranda" class="min-h-screen flex items-center bg-gray-50 pt-16">
+            <div
+                class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center text-center md:text-left md:gap-12">
+                <div class="md:w-1/2 reveal-on-scroll">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">Menjembatani Dunia Fisik & Digital Melalui
+                        <span class="text-accent">Teknologi dan Seni.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600">Seorang inovator multi-disiplin yang mengubah ide kompleks
+                        menjadi solusi fungsional dan pengalaman yang intuitif.</p>
+                    <a href="#portofolio"
+                        class="mt-8 inline-block bg-accent text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300">Lihat
+                        Portofolio Saya</a>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 reveal-on-scroll">
+                    <img src="images/iPhone 16 Pro - 1 (3).png" alt="Visual Kreatif Teknologi" class="rounded-lg">
+                </div>
+            </div>
+        </section> -->
+
+    <main>
+        <section id="beranda" class="min-h-screen flex items-center bg-gray-50 pt-24 pb-12 lg:pt-16">
+            <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-7/12 reveal-on-scroll text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">Dalam Keadaan Apapun
+                        <span class="text-accent">Jangan Menyerah. Long Run, Long Learn.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">Innovation takes grit. Keep running,
+                        keep learning.</p>
+                    <a href="#portofolio"
+                        class="mt-8 inline-block bg-accent text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300">Lihat
+                        Portofolio Saya</a>
+                </div>
+
+                <div
+                    class="w-full max-w-md lg:max-w-none lg:w-5/12 mt-10 lg:mt-0 flex justify-center lg:justify-end reveal-on-scroll">
+                    <img src="images/iPhone 16 Pro - 1 (3).png" alt="Visual Kreatif Teknologi" class="rounded-lg">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- bagian portofolio -->
+        <section id="portofolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Portofolio Proyek</h2>
+                    <p class="text-gray-600 mt-2">Kumpulan karya pilihan saya di berbagai bidang.</p>
+                </div>
+                <div id="filter-buttons" class="flex flex-wrap justify-center gap-4 mb-10 reveal-on-scroll">
+                    <button class="filter-btn active px-5 py-2 rounded-md" data-filter="all">Semua</button>
+                    <button class="filter-btn px-5 py-2 rounded-md" data-filter="iot">IoT & Embedded</button>
+                    <button class="filter-btn px-5 py-2 rounded-md" data-filter="uiux">Desain UI/UX</button>
+                    <button class="filter-btn px-5 py-2 rounded-md" data-filter="foto">Fotografi</button>
+                    <button class="filter-btn px-5 py-2 rounded-md" data-filter="tulisan">Tulisan & Konten</button>
+                </div>
+                <div id="portfolio-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="portfolio-item reveal-on-scroll" data-category="iot">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/image.png" alt="Proyek IoT"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">IoT & Embedded System</span>
+                                <h3 class="text-xl font-bold mt-2">Rancang Bangun Sistem Aqualculture Cerdas Ikan Mas
+                                    Koki Berbasis Internet of Things (IOT) Menggunakan ESP-32</h3>
+                                <button class="open-modal-btn mt-4 text-accent font-semibold"
+                                    data-modal-target="modal-iot-1">Lihat Selengkapnya →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="iot">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/biodigester.png" alt="Proyek IoT"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">Embedded System</span>
+                                <h3 class="text-xl font-bold mt-2">Sistem Kendali Tekanan Gas, Suhu dan PH Menggunakan
+                                    Mikrokontroler Pada Biodigester Anaerobik</h3>
+                                <button class="open-modal-btn mt-4 text-accent font-semibold"
+                                    data-modal-target="modal-iot-2">Lihat Selengkapnya →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="iot">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/flori.png" alt="Proyek IoT"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">IoT & Embedded System</span>
+                                <h3 class="text-xl font-bold mt-2">Sistem Penyiraman Cerdas Pada Tanaman Melon Berbasis
+                                    Internet Of Things Dan Nodemcu Esp8266 Berdasarkan Kebutuhan Greenhouse Melon
+                                    Bumi Puspitek Asri Di Pagedangan</h3>
+                                <button class="open-modal-btn mt-4 text-accent font-semibold"
+                                    data-modal-target="modal-iot-3">Lihat Selengkapnya →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="iot">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/SPTO1.png" alt="Proyek IoT"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">IoT & Embedded System</span>
+                                <h3 class="text-xl font-bold mt-2">Rancangan Sistem Penyiraman Tanaman Otomatis
+                                    Terintegrasi Secara Internet Of Things (IOT) Dengan Data Terbuka BMKG</h3>
+                                <button class="open-modal-btn mt-4 text-accent font-semibold"
+                                    data-modal-target="modal-iot-4">Lihat Selengkapnya →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="uiux">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/desainapp1.png" alt="Proyek UI/UX"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">Desain UI/UX</span>
+                                <h3 class="text-xl font-bold mt-2">Design Application Calon Pemimpinku. (Case Study
+                                    UI/UX Design Mobile App)</h3>
+                                <button class="open-modal-btn mt-4 text-accent font-semibold"
+                                    data-modal-target="modal-uiux-1">Lihat Studi Kasus →</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="foto">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/gambar3.jpg" alt="Proyek Fotografi"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">Fotografi</span>
+                                <h3 class="text-xl font-bold mt-2">Potret Random</h3>
+                                <a href="galeri.html" class="mt-4 inline-block text-accent font-semibold">Lihat Galeri
+                                    →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="tulisan">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop"
+                                alt="Proyek Tulisan"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">Tulisan & Konten</span>
+                                <h3 class="text-xl font-bold mt-2">Artikel: Masa Depan IoT</h3>
+                                <a href="artikel.html" class="mt-4 inline-block text-accent font-semibold">Baca
+                                    Selengkapnya →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal-on-scroll" data-category="tulisan">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="images/My Writting.png" alt="Proyek Tulisan"
+                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <span class="text-sm text-accent">Tulisan & Konten</span>
+                                <h3 class="text-xl font-bold mt-2">Kumpulan Cerita Pendekku</h3>
+                                <a href="https://www.wattpad.com/user/RioRivaldy2002" target="_blank"
+                                    class="mt-4 inline-block text-accent font-semibold">Baca
+                                    Selengkapnya →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 reveal-on-scroll">
+                    <img src="images/profile.png" alt="Foto Profil"
+                        class="rounded-full shadow-2xl mx-auto w-64 h-64 object-cover">
+                </div>
+                <div class="md:w-2/3 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Tentang Saya</h2>
+                    <p class="mt-4 text-gray-600">Halo, saya Mario Rivaldy - seorang yang memiliki passion atau keahlian
+                        di bidang <strong>IOT</strong> dan <strong>Embedded System</strong> serta beberapa keahlian lain
+                        seperti <strong>programming</strong>, <strong>UI/UXDesign</strong>, <strong>Networking</strong>
+                        dan sudah berpengalaman di dunia <strong>edukasi</strong> dan <strong>mengajar</strong>. Selain
+                        itu, saya juga memiliki hobby di bidang fotografi</p>
+
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold mb-4">Keterampilan Utama</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">IoT</span>
+                            <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Embedded
+                                Systems</span>
+                            <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Teaching</span>
+                            <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Education</span>
+                            <span
+                                class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Programming</span>
+                            <span
+                                class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Networking</span>
+                            <span
+                                class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Communication</span>
+                            <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">UI/UX
+                                <span class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Embedded
+                                    Design</span>
+                                <span
+                                    class="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full">Photography</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="teknologi" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Teknologi & Software</h2>
+                    <p class="text-gray-600 mt-2">Beberapa alat dan teknologi yang saya gunakan untuk mewujudkan ide.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/HTML-5.png" alt="HTML Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">HTML5</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <svg class="w-16 h-16 text-blue-700 transition-colors duration-300 group-hover:text-accent"
+                            role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <title>CSS3</title>
+                            <path
+                                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.91L5.41 4.91l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.572-3.301.902-3.265-.895-.205-2.267H5.224l.36 4.022L12 19.34l6.416-1.764.896-9.923-2.133.003z" />
+                        </svg>
+                        <p class="mt-4 font-semibold text-center">CSS3</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/javascript.png" alt="JavaScript Logo" class="w-16 h-16">
+                        <p class="mt-4 font-semibold text-center">JavaScript</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/arduino.png" alt="Arduino Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Arduino IDE</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/blynk logo.png" alt="HTML Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Blynk</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/thingspeak logo.png" alt="HTML Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">ThingSpeak</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/arduino.png" alt="Arduino IOT Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Arduino IoT Cloud</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/python logo.png" alt="Python Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Python</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/php logo.png" alt="PHP Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">PHP</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/bootstrap logo.png" alt="Bootstrap Logo" class="w-16 h-14">
+                        <p class="mt-4 font-semibold text-center">Bootstrap</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/mit logo.png" alt="MIT App Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">MIT App Inventor</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/firebase logo.png" alt="Firebase Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Firebase</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/figma logo.png" alt="Figma Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Figma</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/sql.png" alt="SQL Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">SQL</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg reveal-on-scroll">
+                        <img src="images/logo-cisco.png" alt="Cisco Logo" class="w-18 h-16">
+                        <p class="mt-4 font-semibold text-center">Cisco</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengalaman" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Pengalaman Kerja & Organisasi</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Perjalanan profesional saya dalam menciptakan solusi
+                        dan karya.</p>
+                </div>
+
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute left-4 top-0 h-full w-0.5 bg-gray-200" aria-hidden="true"></div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12 pb-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Mei 2025 - Sekarang</span>
+                            <h3 class="text-2xl font-bold mt-1">Advanced Teacher</h3>
+                            <p class="text-gray-500 font-medium mb-4">Koding Next, Kemayoran</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <!-- <li>Teaching engaging, hands-on coding lessons to small groups of 1–6 students in a
+                                    single class.
+                                </li>
+                                <li>Planning, preparing, and delivering programming materials from the curriculum team,
+                                    covering Python, Website Development, JavaScript, AI, IoT, Roblox, and various other
+                                    programming topics.</li>
+                                <li>
+                                    Striving to teach using interactive methods, encouraging students to be confident
+                                    and actively participate in class, while simplifying complex concepts to make them
+                                    easy to understand.
+                                </li>
+                                <li>Conducting teacher training programs, as well as Intracurricular (ICA),
+                                    Co-Curricular (CCA), and bootcamp programs in collaboration with partner schools.
+                                </li> -->
+                                <li>Mengajarkan materi coding yang menarik dan berbasis praktik kepada kelompok kecil
+                                    beranggotakan 1-6 siswa dalam 1 kelas.</li>
+                                <li>Merencanakan, menyiapkan dan menyampaikan materi pemrograman dari tim kurikulum
+                                    terkait Python, Website Development, JavaScript, AI, IOT, Roblox dan berbagai topik
+                                    pemrograman.</li>
+                                <li>Berusaha mengajar dengan metode yang interaktif, mampu mendorong dan mengajak mereka
+                                    untuk percaya diri, aktif Ketika di kelas serta menyederhanakan konsep yang kompleks
+                                    agar mudah dicerna.</li>
+                                <li>Melaksanakan program pelatihan bagi guru-guru, Intrakurikuler (ICA), Co-Curricular
+                                    (CCA) dan bootcamp yang bekerja sama dengan sekolah mitra.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12 pb-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Agustus 2024 - November 2023</span>
+                            <h3 class="text-2xl font-bold mt-1">Freelance IOT Engineer & Embedded System</h3>
+                            <p class="text-gray-500 font-medium mb-4">Depok</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>Membantu para kelompok tani untuk menerapkan teknologi penyiraman otomatis pada
+                                    tanaman
+                                    berbasis Website dan Internet of Things (IoT).</li>
+                                <li>Menjadi narasumber atau mengajarkan tentang penggunaan alat sistem penyiraman
+                                    otomatis yang
+                                    telah dibuat.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12 pb-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Januari 2023 - April 2025</span>
+                            <h3 class="text-2xl font-bold mt-1">Asisten Laboratorium Robotika</h3>
+                            <p class="text-gray-500 font-medium mb-4">Pusat Studi Multimedia dan Robotika Universitas
+                                Gunadarma, Jakarta</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>Menjadi instruktur praktikum untuk mahasiswa tahun kedua dan ketiga jurusan Teknik
+                                    Komputer dan Sistem Komputer terkait bidang Robotika.</li>
+                                <li>Menjadi mentor atau instruktur workshop bagi mahasiswa yang mendapatkan proyek di
+                                    laboratorium Robotika, Embedded Systems, dan Internet of Things (IoT).</li>
+                                <li>Melakukan penelitian untuk kebutuhan pembuatan modul praktikum dan kebutuhan proyek
+                                    laboratorium.</li>
+                                <li>Bertanggung jawab atas pelaksanaan praktikum agar mahasiswa mampu lulus mata kuliah
+                                    praktikum Robotika.</li>
+                                <li>Bertanggung jawab untuk melakukan inventarisasi komponen laboratorium, seperti
+                                    sensor, mikrokontroler, dan PC.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12 pb-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Maret 2023 - Agustus 2023</span>
+                            <h3 class="text-2xl font-bold mt-1">Freelance IOT Engineer & Embedded System</h3>
+                            <p class="text-gray-500 font-medium mb-4">Depok</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>Melakukan riset, termasuk proses perencaan alat, penggunaan komponen dan teknologi,
+                                    perancangan
+                                    rangkaian, implementasi, dan proses pemeliharaan pada alat.</li>
+                                <li>Berkontribusi dalam pengembangan proyek berbasis Embedded System dan Internet of
+                                    Things. </li>
+                                <li>Mendokumentasikan setiap proses secara berkala untuk memastikan proses implementasi
+                                    berjalan
+                                    sesuai tujuan.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12 pb-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Agustus 2022 - Agustus 2023</span>
+                            <h3 class="text-2xl font-bold mt-1">Ketua Divisi Akademik, Departemen Pengembangan Sumber
+                                Daya Manusia</h3>
+                            <p class="text-gray-500 font-medium mb-4">Himatekkom, Depok</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>Bertanggung jawab untuk mengembangkan minat dan bakat setiap mahasiswa teknik
+                                    komputer.</li>
+                                <li>Merencanakan dan membuat konten edukasi dalam bentuk video atau teks di media sosial
+                                    seperti YouTube dan Instagram untuk masyarakat umum.</li>
+                                <li>Membuat naskah untuk lebih dari 8 materi edukasi tentang komputer dan Bahasa
+                                    Inggris.</li>
+                                <li>Menjadi content writer dan copywriter sekaligus menangani manajemen dan perencanaan
+                                    proyek.</li>
+                                <li>Bertanggung jawab untuk memastikan program berjalan dengan baik.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-on-scroll relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                            <span class="text-sm font-semibold text-accent">Agustus 2021 - Agustus 2022</span>
+                            <h3 class="text-2xl font-bold mt-1">Anggota Divisi Akademik, Departemen Pengembangan Sumber
+                                Daya Manusia</h3>
+                            <p class="text-gray-500 font-medium mb-4">Himatekkom, Depok</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li>Membuat naskah materi untuk pembuatan konten video pembelajaran tentang komputer dan
+                                    Bahasa Inggris di kanal YouTube.</li>
+                                <li>Menjadi content writer dan copywriter sekaligus pengisi suara atau narator dalam
+                                    pembuatan konten video pembelajaran tentang komputer dan Bahasa Inggris.</li>
+                                <li>Melakukan proses editing dan pengecekan untuk konten video pembelajaran tentang
+                                    komputer dan Bahasa Inggris yang telah dibuat.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="statistik" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Statistik Pengunjung</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Ringkasan lalu lintas pengunjung website portofolio
+                        ini.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal-on-scroll">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Hari Ini</h4>
+                        <div id="stats-today" class="text-3xl font-bold text-accent mt-2">0</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Kemarin</h4>
+                        <div id="stats-yesterday" class="text-3xl font-bold text-accent mt-2">0</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Total</h4>
+                        <div id="stats-all" class="text-3xl font-bold text-accent mt-2">0</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Online</h4>
+                        <div id="stats-online" class="text-3xl font-bold text-accent mt-2">0</div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="statistik" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Statistik Pengunjung</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Data pengunjung secara real-time</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-center reveal-on-scroll">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Total Kunjungan</h4>
+                        <div id="visitor-count" class="text-4xl font-bold text-accent mt-2">0</div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Status Counter</h4>
+                        <div id="status-display"
+                            class="text-xl font-bold text-green-500 mt-2 flex items-center justify-center gap-2">
+                            <span class="relative flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            Terhubung
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold">Mari Berkolaborasi</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Punya ide menarik? Saya siap membantu. Kirimkan
+                        pesan melalui formulir di bawah ini.</p>
+                </div>
+                <div class="max-w-3xl mx-auto reveal-on-scroll">
+                    <form action="https://formspree.io/f/mnneyrvr" id="contactForm" method="POST" class="space-y-6">
+
+                        <input type="hidden" name="_subject" value="Pesan Baru dari Portofolio Mario">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nama" class="block text-sm font-medium">Nama Lengkap</label>
+                                <input type="text" id="nama" name="name" required
+                                    class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium">Alamat Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subjek" class="block text-sm font-medium">Subjek</label>
+                            <input type="text" id="subjek" name="message_subject" required
+                                class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <label for="pesan" class="block text-sm font-medium">Pesan</label>
+                            <textarea id="pesan" name="message" rows="5" required
+                                class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                class="bg-accent text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300">Kirim
+                                Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-[#1D1616] text-white pt-16 pb-10">
+        <div class="container mx-auto px-6">
+
+            <!-- Top Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-xl font-semibold tracking-wide">Mario Rivaldy</h3>
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                        Passionate in IoT, Embedded Systems, Teaching, Education dan teknologi modern.
+                        Built with spirit and coffee ☕
+                    </p>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <h4 class="font-medium text-lg">Contact</h4>
+
+                    <a href="mailto:mariorivaldmariorivaldi2002@gmail.com"
+                        class="flex items-center gap-3 text-gray-400 hover:text-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        mariorivaldmariorivaldi2002@gmail.com
+                    </a>
+
+                    <div class="flex items-center gap-3 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Jakarta, Indonesia
+                    </div>
+                </div>
+
+                <!-- Social -->
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <h4 class="font-medium text-lg">Follow Me</h4>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/mariorivaldy"
+                            class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition" target="_blank"
+                            title="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76 0-.97.78-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.78 1.76-1.75 1.76zM19 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.47V19z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+
+                        <a href="https://github.com/RioRivaldy"
+                            class="p-2 rounded-full bg-white/5 hover:bg-white/10 transition" target="_blank"
+                            title="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.5 9.5 0 0112 6.84c.85 0 1.7.12 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/10 mt-12 pt-6 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2025 Mario Rivaldy. All rights reserved.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <div id="modal-iot-1"
+        class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 hidden opacity-0">
+        <div
+            class="modal-content bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative scale-95">
+            <button class="close-modal-btn absolute top-4 right-4 text-3xl z-10">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Smart Aquaculture</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 border-b pb-6">
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">PERAN SAYA</h4>
+                    <p class="font-bold text-lg">Programmer & IoT Developer</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">DURASI</h4>
+                    <p class="font-bold text-lg">1 Bulan</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">TEKNOLOGI</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">ESP32</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">C++</span>
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Blynk</span>
+                        <!-- <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Flutter</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Deskripsi Proyek</h3>
+            <p class="text-gray-600 mb-6">Proyek ini bertujuan untuk menciptakan ekosistem Smart Aquaculture yang
+                terintegrasi berbasis IoT
+                untuk melakukan monitoring kondisi air secara komprehensif (pH, suhu, turbiditas) serta menjalankan
+                otomatisasi pemberian pakan,
+                guna memastikan keberlanjutan dan produktivitas hasil budidaya.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Hasil Proyek</h3>
+            <p class="text-gray-600 mb-6">Proyek ini berhasil merealisasikan sistem IoT yang stabil, di mana seluruh
+                sensor (pH, suhu, turbiditas)
+                mampu mengirimkan data akurat secara real-time ke platform monitoring, serta mekanisme pakan otomatis
+                berfungsi presisi sesuai jadwal yang diprogram.</p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Galeri Hasil</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="images/image.png" class="rounded-lg w-full h-auto object-cover"
+                    alt="Prototipe Perangkat Keras">
+                <img src="images/interface.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Tampilan Aplikasi Mobile">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iot-2"
+        class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 hidden opacity-0">
+        <div
+            class="modal-content bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative scale-95">
+            <button class="close-modal-btn absolute top-4 right-4 text-3xl z-10">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Biodigester</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 border-b pb-6">
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">PERAN SAYA</h4>
+                    <p class="font-bold text-lg">Programmer & Engineer</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">DURASI</h4>
+                    <p class="font-bold text-lg">6 Bulan</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">TEKNOLOGI</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Arduino
+                            Mega 2560</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">C++</span>
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                        <!-- <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Flutter</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Deskripsi Proyek</h3>
+            <p class="text-gray-600 mb-6">Biodigester merupakan sebuah sistem penghasil biogas, seperti gas metana
+                (CH₄), karbon dioksida (CO₂)
+                beserta gas campuran lainnya yang diperoleh dari hasil penguraian material organik seperti kotoran sapi
+                oleh bakteri
+                yang dapat menyebabkan metanogen (bakteri penghasil metana) di dalam sebuah biodigester secara anaerob
+                (keadaan tanpa oksigen).
+                Untuk itu tujuan dari proyek ini adalah untuk membuat alat dengan sistem kendali otomatis pada
+                biodigester serta dapat untuk mengukur kandungan
+                gas berupa metana (CH₄) dan karbon dioksida (CO₂).
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Hasil Proyek</h3>
+            <p class="text-gray-600 mb-6">Proyek ini berhasil merealisasikan biodigester yang sudah terotomatisasi dalam
+                mengendalikan tekanan gas, suhu dan PH serta menjadikan biodigester yang lebih modern dari biodigester
+                pada umumnya yang masih dikendalikan secara manual.
+
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Galeri Hasil</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="images/biodigester2.png" class="rounded-lg w-full h-90 object-cover"
+                    alt="Prototipe Perangkat Keras">
+                <img src="images/databio.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Tampilan Data Biodigester">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iot-3"
+        class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 hidden opacity-0">
+        <div
+            class="modal-content bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative scale-95">
+            <button class="close-modal-btn absolute top-4 right-4 text-3xl z-10">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Smart Watering System</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 border-b pb-6">
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">PERAN SAYA</h4>
+                    <p class="font-bold text-lg">Project Manager, Programmer & IOT Engineer</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">DURASI</h4>
+                    <p class="font-bold text-lg">6 Bulan</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">TEKNOLOGI</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">NodeMCU
+                            ESP8266</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">C++</span>
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Thingspeak</span>
+                        <!-- <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Flutter</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Deskripsi Proyek</h3>
+            <p class="text-gray-600 mb-6">Sistem penyiraman cerdas tanaman melon adalah sistem irigasi presisi
+                berbasis
+                Internet of Things (IoT) yang mengatur penyiraman
+                secara otomatis berdasarkan waktu dan tingkat kelembaban tanah yang telah ditentukan. Selain
+                itu, sistem
+                ini juga mengukur suhu udara dan menggunakan kipas untuk mengatur sirkulasi udara di dalam
+                greenhouse.
+                Pada wadah penampungan air untuk penyiraman, sensor ultrasonik akan mengaktifkan pompa kedua
+                secara
+                otomatis untuk mengisi air ketika mencapai batas minimal yang telah ditentukan.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Hasil Proyek</h3>
+            <p class="text-gray-600 mb-6">Hasil dari pengembangan ini adalah prototipe sistem penyiraman cerdas
+                yang
+                terintegrasi secara otonom, yang berhasil menstabilkan tingkat kelembapan media tanam pada
+                rentang ideal
+                bagi pertumbuhan melon. Melalui konektivitas NodeMCU ESP8266, sistem ini mampu menyajikan
+                visualisasi
+                data parameter lingkungan ke perangkat pengguna secara real-time.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Galeri Hasil</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="images/flori.png" class="rounded-lg w-full h-90 object-cover" alt="Prototipe Perangkat Keras">
+                <img src="images/thingspeak.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Tampilan Data Thingspeak">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iot-4"
+        class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 hidden opacity-0">
+        <div
+            class="modal-content bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative scale-95">
+            <button class="close-modal-btn absolute top-4 right-4 text-3xl z-10">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Smart Irrigation System</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 border-b pb-6">
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">PERAN SAYA</h4>
+                    <p class="font-bold text-lg">Programmer & IOT Engineer</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">DURASI</h4>
+                    <p class="font-bold text-lg">6 Bulan</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">TEKNOLOGI</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">NodeMCU
+                            ESP8266</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">C++</span>
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Web
+                            Dev</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Arduino
+                            IDE</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Deskripsi Proyek</h3>
+            <p class="text-gray-600 mb-6">Sistem penyiraman cerdas untuk tanaman yang terintegrasi dengan Internet Of
+                Things (IOT) serta Data Terbuka BMKG.
+                Metode penyiraman seperti ini bisa membantu para petani untuk melakukan penyiraman secara efisien dan
+                membuat sumber daya, seperti listrik dan air bisa menjadi lebih hemat.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Hasil Proyek</h3>
+            <p class="text-gray-600 mb-6">Hasil dari pengembangan ini adalah prototipe sistem penyiraman cerdas yang
+                terintegrasi secara IOT dan Data Terbuka BMKG, yang mana berhasil mengendalikan sistem penyiraman
+                berdasarkan
+                prakiraan cuaca dari BMKG serta sudah termotomatisasi.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Galeri Hasil</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="images/SPTO2.jpg" class="rounded-lg w-full h-90 object-cover" alt="Prototipe Perangkat Keras">
+                <img src="images/SPTO4.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Tampilan Data Thingspeak">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-uiux-1"
+        class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 hidden opacity-0">
+        <div
+            class="modal-content bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative scale-95">
+            <button class="close-modal-btn absolute top-4 right-4 text-3xl z-10">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Desain Aplikasi Calon Pemimpinku</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 border-b pb-6">
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">PERAN SAYA</h4>
+                    <p class="font-bold text-lg">UI/UX Designer</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">DURASI</h4>
+                    <p class="font-bold text-lg">2 Minggu</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-500 text-sm">TEKNOLOGI</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Figma</span>
+                        <span class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Maze</span>
+                        <span
+                            class="bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Prototipe</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Deskripsi Proyek</h3>
+            <p class="text-gray-600 mb-6">Studi kasus ini berfokus pada Aplikasi berbasis sistem informasi yang
+                menyajikan informasi seputar tokoh-tokoh nasional bakal calon pemimpin Indonesia, dimuat dalam
+                satu
+                aplikasi untuk para pemilih di seluruh Indonesia. Tujuan utamanya adalah agar para pemilih tidak
+                bingung
+                dan tahu persis akan calon pemimpin yang dipilihnya. Anda juga bisa melihat proses lebih
+                lengkapnya <a
+                    href="https://docs.google.com/presentation/d/1cfM_2CIKSOP7yW0byF_M5VIE6wcU6eYb4YaGdW1WY9o/edit?usp=sharing"
+                    target="_blank"><strong>disini.</strong></a>
+            </p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Hasil Proyek</h3>
+            <p class="text-gray-600 mb-6">Desain aplikasi yang telah dibuat sudah memudahkan pengguna dalam
+                mencari
+                informasi tokoh bakal calon pemimpin pada pemilu nanti dengan kustomisasi yang membuat pengguna
+                semakin
+                nyaman dan betah ketika membaca.</p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Galeri Hasil</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="images/wireframe.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Wireframe atau User Flow">
+                <img src="images/desainapp1.png" class="rounded-lg w-full h-auto object-cover border"
+                    alt="Hasil Desain Akhir">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-foto-1"></div>
+    <div id="modal-tulisan-1"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+
+    <script>
+        async function loadVisitorCounter() {
+            const workspace = 'mario-rivaldys-team-2318';
+            const counter = 'first-counter-2318';
+            const url = `https://api.counterapi.dev/v1/${workspace}/${counter}/up`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const result = await response.json();
+
+                // Pada API V1, datanya ada di properti 'count'
+                const displayElement = document.getElementById('visitor-count');
+                if (displayElement) {
+                    displayElement.innerText = result.count;
+                }
+                console.log('Counter updated to:', result.count);
+            } catch (error) {
+                console.error('Error fetching counter:', error);
+                document.getElementById('visitor-count').innerText = '1'; // Fallback
+            }
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', loadVisitorCounter);
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- LOGIC BARU UNTUK VISITOR COUNTER ---
+
+            // // Fungsi untuk mengambil dan menampilkan statistik
+            // function loadStats() {
+            //     // 1. Panggil file PHP untuk mencatat kunjungan saat ini (tidak perlu menunggu hasilnya)
+            //     fetch('record_visit.php', { method: 'POST' });
+
+            //     // 2. Panggil file PHP untuk mendapatkan data statistik
+            //     fetch('get_stats.php')
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             // 3. Perbarui angka di HTML dengan data yang diterima
+            //             document.getElementById('stats-today').innerText = data.today || 0;
+            //             document.getElementById('stats-yesterday').innerText = data.yesterday || 0;
+            //             document.getElementById('stats-all').innerText = data.all || 0;
+            //             document.getElementById('stats-online').innerText = data.online || 0;
+            //         })
+            //         .catch(error => {
+            //             console.error('Error memuat statistik:', error);
+            //         });
+            // }
+
+            // // Panggil fungsi saat halaman pertama kali dimuat
+            // loadStats();
+
+            // Opsional: Refresh data 'online' setiap 1 menit (60000 milidetik)
+            // setInterval(loadStats, 60000);
+            // --- LOGIC MENU MOBILE ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- LOGIC FILTER PORTOFOLIO ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-accent', 'text-white'));
+                    button.classList.add('active', 'bg-accent', 'text-white');
+                    const filter = button.dataset.filter;
+                    portfolioItems.forEach(item => {
+                        item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+                    });
+                });
+            });
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active', 'bg-accent', 'text-white');
+
+            // --- LOGIC ACTIVE NAV LINK ON SCROLL ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+            sections.forEach(section => observer.observe(section));
+
+            // --- LOGIC MODAL ---
+            const openModalButtons = document.querySelectorAll('.open-modal-btn');
+            const closeModalButtons = document.querySelectorAll('.close-modal-btn');
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.dataset.modalTarget;
+                    const modal = document.getElementById(modalId);
+                    openModal(modal);
+                });
+            });
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal');
+                    closeModal(modal);
+                });
+            });
+
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+
+            function openModal(modal) {
+                if (!modal) return;
+                document.body.classList.add('modal-open');
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modal.querySelector('.modal-content').classList.add('scale-100');
+                }, 10);
+            }
+
+            function closeModal(modal) {
+                if (!modal) return;
+                document.body.classList.remove('modal-open');
+                modal.classList.remove('opacity-100');
+                modal.querySelector('.modal-content').classList.remove('scale-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            // --- LOGIC ANIMASI SCROLL (VERSI BERULANG) ---
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                scrollObserver.observe(el);
+            });
+        });
+    </script>
+    <script>
+        // --- LOGIC PENGIRIMAN FORM (AJAX) ---
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault(); // Mencegah halaman reload/pindah
+
+            const data = new FormData(event.target);
+
+            // Ubah tombol menjadi "Mengirim..." agar user tahu proses berjalan
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerText;
+            submitButton.innerText = 'Mengirim...';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // 1. Tampilkan pesan sukses
+                    alert("Terima kasih! Pesan Anda telah terkirim.");
+
+                    // 2. KOSONGKAN FORM (Ini kuncinya)
+                    form.reset();
+                } else {
+                    // Jika ada error dari server (misal email salah)
+                    const errorData = await response.json();
+                    alert("Oops! Ada masalah: " + (errorData.errors ? errorData.errors.map(e => e.message).join(", ") : "Gagal mengirim"));
+                }
+            } catch (error) {
+                // Jika koneksi internet mati atau error jaringan
+                alert("Terjadi kesalahan koneksi. Silakan coba lagi.");
+            } finally {
+                // Kembalikan tombol seperti semula
+                submitButton.innerText = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
